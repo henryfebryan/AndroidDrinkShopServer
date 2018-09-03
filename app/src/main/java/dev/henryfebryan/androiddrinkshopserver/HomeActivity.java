@@ -262,6 +262,9 @@ public class HomeActivity extends AppCompatActivity
     }
 
     private void displayMenuList(List<Category> categories) {
+
+        Common.menuList = categories;
+
         MenuAdapter adapter = new MenuAdapter(this,categories);
         recycler_menu.setAdapter(adapter);
     }
