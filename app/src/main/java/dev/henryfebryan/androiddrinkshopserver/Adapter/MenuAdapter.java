@@ -13,6 +13,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import dev.henryfebryan.androiddrinkshopserver.Adapter.ViewHolder.MenuViewHolder;
+import dev.henryfebryan.androiddrinkshopserver.DrinkListActivity;
 import dev.henryfebryan.androiddrinkshopserver.Interface.IItemClickListener;
 import dev.henryfebryan.androiddrinkshopserver.Model.Category;
 import dev.henryfebryan.androiddrinkshopserver.R;
@@ -45,9 +46,15 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder>{
 
         holder.setItemClickListener(new IItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Common.currentCategory = categoryList.get(position);
-                context.startActivity(new Intent(context, UpdateCategoryActivity.class));
+            public void onClick(View view, boolean isLongClick) {
+                if(isLongClick) {
+                    Common.currentCategory = categoryList.get(position);
+                    context.startActivity(new Intent(context, UpdateCategoryActivity.class));
+                }
+                else {
+                    Common.currentCategory = categoryList.get(position);
+                    context.startActivity(new Intent(context, DrinkListActivity.class));
+                }
             }
         });
     }

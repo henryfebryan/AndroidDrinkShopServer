@@ -3,6 +3,7 @@ package dev.henryfebryan.androiddrinkshopserver.Retrofit;
 import java.util.List;
 
 import dev.henryfebryan.androiddrinkshopserver.Model.Category;
+import dev.henryfebryan.androiddrinkshopserver.Model.Drink;
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import retrofit2.Call;
@@ -33,4 +34,8 @@ public interface IDrinkShopAPI {
     @FormUrlEncoded
     @POST("server/category/delete_category.php")
     Observable<String> deleteCategory(@Field("id") String id);
+
+    @FormUrlEncoded
+    @POST("getdrink.php")
+    Observable<List<Drink>> getDrink(@Field("menuid") String menuID);
 }
