@@ -19,4 +19,20 @@ public class Common {
     public static IDrinkShopAPI getAPI(){
         return RetrofitClient.getClient(BASE_URL).create(IDrinkShopAPI.class);
     }
+    public static String convertCodeToStatus(int orderStatus) {
+        switch (orderStatus){
+            case 0:
+                return "Placed";
+            case 1:
+                return "Processing";
+            case 2:
+                return "Shipping";
+            case 3:
+                return "Shipped";
+            case -1:
+                return "Cancelled";
+            default:
+                return "Order Error";
+        }
+    }
 }

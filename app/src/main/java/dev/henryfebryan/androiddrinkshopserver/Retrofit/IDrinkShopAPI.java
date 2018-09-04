@@ -4,6 +4,7 @@ import java.util.List;
 
 import dev.henryfebryan.androiddrinkshopserver.Model.Category;
 import dev.henryfebryan.androiddrinkshopserver.Model.Drink;
+import dev.henryfebryan.androiddrinkshopserver.Model.Order;
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import retrofit2.Call;
@@ -61,4 +62,8 @@ public interface IDrinkShopAPI {
     @FormUrlEncoded
     @POST("server/product/delete_product.php")
     Observable<String> deleteProduct(@Field("id") String id);
+
+    @FormUrlEncoded
+    @POST("server/order/getorder.php")
+    Observable<List<Order>> getOrder(@Field("status") String status);
 }

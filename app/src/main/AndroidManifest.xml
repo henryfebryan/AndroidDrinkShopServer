@@ -24,7 +24,8 @@
         </activity>
         <activity android:name=".UpdateCategoryActivity" />
         <activity android:name=".DrinkListActivity" />
-        <activity android:name=".UpdateProductActivity"></activity>
+        <activity android:name=".UpdateProductActivity" />
+        <activity android:name=".ShowOrderActivity"></activity>
     </application>
 
 </manifest>
